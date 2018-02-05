@@ -1,1 +1,1 @@
-# MegaTextAnalyer
+# MegaTextAnalyser
