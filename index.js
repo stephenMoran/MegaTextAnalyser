@@ -2,7 +2,6 @@
 
 const Twitter = require("twitter");
 const Credentials = require("./credentials_twitter");
-const Readline = require("readline-sync");
 
 let client = new Twitter({
   consumer_key: Credentials.CONSUMER_KEY,
@@ -11,12 +10,8 @@ let client = new Twitter({
   access_token_secret: Credentials.ACCESS_SECRET
 });
 
-let handle = Readline.question("Enter Twitter handle: ");
-// let count = Readline.question("How many tweets: ");
-console.log("\n");
-
 client.get("statuses/user_timeline", {
-  screen_name: handle,
+  screen_name: process.argv[2],
   exclude_replies: 1,
   include_rts: 0,
   trim_user: 1
